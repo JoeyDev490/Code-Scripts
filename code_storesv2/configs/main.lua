@@ -1,0 +1,2 @@
+Config = {} 
+Config.BaseName = "core"
