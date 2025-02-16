@@ -1,0 +1,1 @@
+ESX = exports[config.BaseName]:getSharedObject()
