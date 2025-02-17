@@ -15,12 +15,10 @@ shared_scripts {
 
 server_scripts {
     "@oxmysql/lib/MySQL.lua",
-    "server/functions.lua",
     "server/main.lua"
 }
 
 client_scripts {
-    "client/functions.lua",
     "client/main.lua"
 }
 
@@ -34,7 +32,7 @@ ui_page("html/index.html") -- comment out if using dev page
 -- ui_page("http://localhost:5173") -- unncomment for dev page
 
 shared_scripts({
-    "configs/main.lua"
+    "config.lua"
 })
 
 server_scripts({
