@@ -1,0 +1,7 @@
+RegisterNetEvent('updateWeather')
+AddEventHandler('updateWeather', function(weatherType)
+    SetWeatherTypeNowPersist(weatherType)
+    SetWeatherTypeNow(weatherType)
+    SetOverrideWeather(weatherType)
+    print("In-game weather updated to: " .. weatherType)
+end)
