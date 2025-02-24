@@ -45,16 +45,38 @@ RegisterCommand("trygghansa", function()
     end
 end, false)
 
+RegisterCommand('+trygghansa', function()
+    local playerData = ESX.GetPlayerData()
+    if Config.JobName == "none" or playerData.job.name == Config.JobName then
+    lib.showContext('trygghansa_jobmenu')
+    end
+end)
 
+RegisterKeyMapping('+trygghansa', 'Open Trygghansa Job Menu', 'keyboard', 'F6')
+
+lib.registerContext({
+    
+    id = 'trygghansa_jobmenu',
+    title = 'Trygghansa Jobmenu',
+    options = {
+      {
+        title = 'Open Job Panel',
+        description = 'Opens the trygghansa insurance panel',
+        icon = 'life-ring',
+        onSelect = function()
+          ExecuteCommand('trygghansa')
+        end,
+        metadata = {
+          {label = 'Opens Trygghansa Insurance Menu'}
+        },
+      },        
+      }
+  })
 
 RegisterNUICallback("closeMenu", function(data, cb)
     SetNuiFocus(false, false)
-
-    -- Stop the animation
     local playerPed = cache.ped
     ClearPedTasks(playerPed)
-
-    -- Remove the tablet prop
     if tablet then
         DeleteEntity(tablet)
         tablet = false

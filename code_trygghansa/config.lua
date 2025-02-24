@@ -4,7 +4,7 @@ Config = {}
 Config.BaseName = "core"
 
 -- Job Name Required to Access the Panel
-Config.JobName = "none"
+Config.JobName = "none" -- None to allow everyone to access
 
 
 Config.Tablet = {
